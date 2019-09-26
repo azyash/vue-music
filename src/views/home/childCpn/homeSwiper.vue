@@ -3,7 +3,9 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item,index) in banner" :key="index">
-          <img :src="item.imageUrl" alt="">
+          <a :href="item.url">
+            <img :src="item.imageUrl" alt="">
+          </a>
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -31,7 +33,7 @@ export default {
         var mySwiper = new Swiper('.swiper-container', {
           direction: 'horizontal',
           autoplay: {
-            delay: 1000,
+            delay: 3000,
             disableOnInteraction: false
           },
           observer: true,

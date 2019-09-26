@@ -1,16 +1,24 @@
 <template>
   <div>
+    <homeNavBar></homeNavBar>
     <homeSwiper :banner="banner"></homeSwiper>
+    <daily></daily>
   </div>
 </template>
 
 <script>
 import { getBanner } from 'network/home'
 import homeSwiper from './childCpn/homeSwiper'
+import homeNavBar from './childCpn/homeNavBar'
+import daily from './childCpn/daily'
 
 export default {
   name: "",
-  components: { homeSwiper },
+  components: {
+    homeSwiper,
+    homeNavBar,
+    daily
+  },
   props: {},
   data () {
     return {
@@ -26,7 +34,6 @@ export default {
     getMultidata () {
       getBanner().then(res => {
         this.banner = res.data.banners
-        console.log(this.banner)
       })
     }
   },
