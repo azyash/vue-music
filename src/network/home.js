@@ -1,6 +1,6 @@
-import request from './request'
-export function get () {
+import { request } from './request'
+export function getBanner () {
   return request({
-    url: ''
+    url: '/banner'
   })
 }

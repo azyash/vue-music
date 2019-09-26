@@ -24,6 +24,6 @@ export default {
 <style scoped>
 .tabBar {
   display: flex;
-  background: red;
+  background: #eee;
 }
 </style>

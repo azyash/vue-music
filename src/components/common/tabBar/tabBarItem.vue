@@ -1,9 +1,12 @@
 <template>
   <div class="tabBarItem" @click="itemClick">
-    <div>
-      <slot name="icon"></slot>
+    <div class="icon">
+      <transition name="fade">
+        <slot v-if="!isShow" name="icon"></slot>
+        <slot v-else name="active"></slot>
+      </transition>
     </div>
-    <div>
+    <div :class="{'title':true,'textActive':isShow}">
       <slot name="title"></slot>
     </div>
   </div>
@@ -23,7 +26,11 @@ export default {
     }
   },
   watch: {},
-  computed: {},
+  computed: {
+    isShow () {
+      return this.$route.path.indexOf(this.link) !== -1
+    }
+  },
   methods: {
     itemClick () {
       this.$router.replace(this.link)
@@ -41,6 +48,31 @@ export default {
   flex-direction: column;
   align-items: center;
   flex: 1;
-  border: 1px solid black;
+}
+.icon {
+  position: absolute;
+  top: 3px;
+  width: 30px;
+  height: 30px;
+}
+.icon img {
+  width: 30px;
+  height: 30px;
+}
+.title {
+  position: absolute;
+  bottom: 0px;
+  font-size: 10px;
+}
+.textActive {
+  color: red;
+}
+.fade-enter-active {
+  transition: all 0.5s;
+}
+.fade-enter {
+  opacity: 0;
+  width: 30px;
+  height: 30px;
 }
 </style>
