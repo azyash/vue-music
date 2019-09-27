@@ -62,7 +62,7 @@ p {
   font-weight: 700;
 }
 h3 {
-  color: #ff4949;
+  color: #d33a31;
   position: absolute;
   left: 50%;
   transform: translate(-50%);

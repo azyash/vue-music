@@ -37,18 +37,14 @@ input {
   height: 30px;
   border-radius: 42px;
   background: #eee;
-  transition: 0.1s linear;
   float: right;
-}
-
-input:focus {
-  width: 70vw;
 }
 button {
   background: #eee;
   position: absolute;
   right: 10px;
-  transform: translate(0, 55%);
+  top: 15px;
+  transform: translate(0, -50%);
 }
 form {
   position: relative;
