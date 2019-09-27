@@ -33,6 +33,9 @@ export default {
 }
 
 .nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
 }
 
