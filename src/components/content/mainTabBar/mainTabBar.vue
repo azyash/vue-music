@@ -60,6 +60,7 @@ export default {
 
 <style scoped>
 .mainTabBar {
+  width: 100%;
   height: 50px;
   position: fixed;
   bottom: 0;

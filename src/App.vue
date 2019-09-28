@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="songList">
       <router-view />
     </keep-alive>
     <mainTabBar></mainTabBar>
@@ -17,4 +17,8 @@ export default {
 
 <style>
 @import "assets/css/base.css";
+#app {
+  width: 100%;
+  overflow: hidden;
+}
 </style>

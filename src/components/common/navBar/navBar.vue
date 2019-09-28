@@ -4,7 +4,7 @@
       <slot name="left"></slot>
     </div>
     <div class="nav-center">
-      <slot name="center">标题</slot>
+      <slot name="center"></slot>
     </div>
     <div class="nav-right">
       <slot name="right"></slot>

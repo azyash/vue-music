@@ -23,6 +23,7 @@ export default {
 
 <style scoped>
 .tabBar {
+  width: 100%;
   display: flex;
   background: #eee;
 }

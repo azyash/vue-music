@@ -4,10 +4,11 @@
     <div slot="center">
       <form>
         <input type="text" placeholder="单曲/歌单/电台">
-        <button class="el-icon-search" type="submit"></button>
       </form>
     </div>
-    <img src="" alt="">
+    <div slot="right">
+      <img src="~assets/image/common/musicicon.png" alt="">
+    </div>
   </navBar>
 </template>
 
@@ -34,18 +35,12 @@ export default {
 input {
   padding-left: 10px;
   width: 60vw;
-  height: 30px;
+  height: 28px;
   border-radius: 42px;
   background: #eee;
   float: right;
 }
-button {
-  background: #eee;
-  position: absolute;
-  right: 10px;
-  top: 15px;
-  transform: translate(0, -50%);
-}
+
 form {
   position: relative;
   width: 60vw;
@@ -56,5 +51,8 @@ input::-ms-input-placeholder {
 }
 input::-webkit-input-placeholder {
   text-align: center;
+}
+img {
+  width: 18px;
 }
 </style>

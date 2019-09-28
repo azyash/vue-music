@@ -6,6 +6,7 @@ const CloudVillage = () => import('./views/cloudVillage/cloudVillage')
 const Mvideo = () => import('./views/mvideo/mvideo')
 const Profile = () => import('./views/profile/profile')
 const Use = () => import('./views/use/use')
+const SongList = () => import('./views/songList/songList')
 
 Vue.use(vueRouter)
 
@@ -34,6 +35,10 @@ const routes = [
     path: '/use',
     component: Use
   },
+  {
+    path: '/songlist',
+    component: SongList
+  }
 ]
 
 export default new vueRouter({
