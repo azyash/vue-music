@@ -3,7 +3,6 @@
     <div class="bgImg">
       <img :src="songList.playlist.coverImgUrl" alt="">
     </div>
-    <songListNavBar />
     <div class="head">
       <img :src="songList.playlist.coverImgUrl" alt="">
       <div>
@@ -70,16 +69,16 @@ export default {
 
 <style scoped>
 .bgImg {
-  position: relative;
-  width: 100%;
+  z-index: -1;
+  position: absolute;
+  width: 130%;
+  left: -10%;
+  top: -10%;
+  overflow: hidden;
+  filter: blur(30px);
 }
 .bgImg img {
-  position: absolute;
-  width: 120%;
-  z-index: -1;
-  top: -10%;
-  left: -10%;
-  filter: blur(30px);
+  width: 100%;
 }
 .head {
   color: rgb(206, 206, 206);
@@ -117,6 +116,7 @@ ul li {
   margin-right: 5px;
 }
 ol {
+  padding-bottom: 20px;
   margin: 0 auto;
   width: 80%;
   display: flex;

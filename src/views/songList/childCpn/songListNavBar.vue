@@ -33,6 +33,7 @@ export default {
 
 <style scoped>
 div {
+  width: 100%;
   font-size: 18px;
   font-weight: 600;
   color: white;
