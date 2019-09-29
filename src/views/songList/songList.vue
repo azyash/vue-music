@@ -1,6 +1,6 @@
 <template>
   <div class="songList">
-    <songListNavBar class="songListNavBar" />
+    <songListNavBar />
     <songListHead :songList="songList" />
     <musicItemBox class="musicItemBox" :musicItem="musicItem" />
   </div>
