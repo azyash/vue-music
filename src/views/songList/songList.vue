@@ -1,20 +1,30 @@
 <template>
   <div class="songList">
+    <backTop class="backTop">
+      <img src="~assets/image/common/top.png" alt="">
+    </backTop>
     <songListNavBar />
     <songListHead :songList="songList" />
     <musicItemBox class="musicItemBox" :musicItem="musicItem" />
+
   </div>
 </template>
 
 <script>
 import { getSongList } from 'network/songList'
+import backTop from 'components/content/backTop/backTop'
 import songListHead from './childCpn/songListHead'
 import songListNavBar from './childCpn/songListNavBar'
 import musicItemBox from './childCpn/musicItemBox'
 
 export default {
   name: "songList",
-  components: { songListHead, musicItemBox, songListNavBar },
+  components: {
+    songListHead,
+    musicItemBox,
+    songListNavBar,
+    backTop
+  },
   props: {},
   data () {
     return {
@@ -49,6 +59,11 @@ export default {
 </script>
 
 <style scoped>
+.backTop {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+}
 .songList {
   position: relative;
   width: 100%;

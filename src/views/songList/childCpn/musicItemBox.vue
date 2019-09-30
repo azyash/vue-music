@@ -27,6 +27,7 @@ export default {
 
 <style scoped>
 .musicItemBox {
+  padding-bottom: 50px;
   padding-top: 30px;
   border-radius: 25px 25px;
   background: white;
