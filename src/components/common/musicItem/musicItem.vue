@@ -1,5 +1,5 @@
 <template>
-  <div class="musicItem">
+  <div class="musicItem" @click="reviseMusic">
     <div class="left">
       {{index+1}}
     </div>
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { getMusicUrl } from 'network/songList';
+
 export default {
   name: "",
   components: {},
@@ -23,12 +25,20 @@ export default {
   },
   data () {
     return {
+      musicId: 0
     }
   },
   watch: {},
   computed: {},
-  methods: {},
+  methods: {
+    reviseMusic () {
+      this.$store.commit('reviseMusic', this.musicId)
+    }
+  },
   created () {
+    getMusicUrl(this.musicItem.id).then(res => {
+      this.musicId = res.data.data[0].url
+    })
   },
   mounted () { }
 }

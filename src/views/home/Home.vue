@@ -48,7 +48,6 @@ export default {
       })
       getRecommendSongList('6').then(res => {
         this.recommendSongLists = res.data.result
-        console.log(res)
       })
     }
   },

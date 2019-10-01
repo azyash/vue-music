@@ -26,9 +26,7 @@ export default {
 
   },
   mounted () { },
-  updated () {
-    console.log(this.recommendSongLists)
-  },
+  updated () { },
 }
 </script>
 

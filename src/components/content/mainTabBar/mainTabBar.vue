@@ -7,21 +7,21 @@
       </div>
       <div slot="title">发现</div>
     </tabBarItem>
-    <tabBarItem link="/cloudvillage">
+    <tabBarItem link="/mvideo">
       <img slot="icon" src="~assets/image/mainTabBar/cm2_btm_icn_radio.png" alt="">
       <div slot="active" class="active">
         <img slot="icon" src="~assets/image/mainTabBar/cm2_btm_icn_radio_prs.png" alt="">
       </div>
       <div slot="title">视频</div>
     </tabBarItem>
-    <tabBarItem link="/mvideo">
+    <tabBarItem link="/profile">
       <img slot="icon" src="~assets/image/mainTabBar/cm2_btm_icn_music.png" alt="">
       <div slot="active" class="active">
         <img slot="icon" src="~assets/image/mainTabBar/cm2_btm_icn_music_prs.png" alt="">
       </div>
       <div slot="title">我的</div>
     </tabBarItem>
-    <tabBarItem link="/profile">
+    <tabBarItem link="/cloudvillage">
       <img slot="icon" src="~assets/image/mainTabBar/cm2_btm_icn_friend.png" alt="">
       <div slot="active" class="active">
         <img slot="icon" src="~assets/image/mainTabBar/cm2_btm_icn_friend_prs.png" alt="">

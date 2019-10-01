@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <audio autoplay="autoplay" :src="music" />
     <keep-alive exclude="songList">
       <router-view />
     </keep-alive>
@@ -11,7 +12,12 @@
 import mainTabBar from "components/content/mainTabBar/mainTabBar"
 
 export default {
-  components: { mainTabBar }
+  components: { mainTabBar },
+  computed: {
+    music: function () {
+      return this.$store.state.music
+    }
+  }
 }
 </script>
 

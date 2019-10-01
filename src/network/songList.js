@@ -8,3 +8,12 @@ export function getSongList (id) {
     }
   })
 }
+
+export function getMusicUrl (id) {
+  return request({
+    url: '/song/url',
+    params: {
+      id
+    }
+  })
+}

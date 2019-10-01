@@ -43,7 +43,6 @@ export default {
       getSongList(this.id).then(res => {
         this.songList = res.data
         this.musicItem = res.data.playlist.tracks
-        console.log(this.songList)
       })
     }
   },
