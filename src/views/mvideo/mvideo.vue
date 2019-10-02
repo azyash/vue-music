@@ -1,9 +1,6 @@
 <template>
-  <div>mvideo
-    <div>
-      <p>{{music}}</p>
-      <input type="button" value="歌曲" @click="asdf">
-    </div>
+  <div>
+
   </div>
 </template>
 

@@ -90,6 +90,7 @@ h2 {
 }
 .head > img:nth-child(1) {
   width: 40%;
+  height: 40%;
   border-radius: 5px;
 }
 .head > div {
