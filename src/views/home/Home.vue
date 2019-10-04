@@ -7,18 +7,21 @@
       <Wtitle :title="'推荐歌单'"></Wtitle>
       <Rdiv :recommendSongLists="recommendSongLists" class="Rdiv"></Rdiv>
       <Wtitle :title="'推荐MV'"></Wtitle>
+      <recommendMv></recommendMv>
     </scroll>
   </div>
 </template>
 
 <script>
-import { getBanner, getRecommendSongList, getRecommendMv } from 'network/home'
+import { getBanner, getRecommendSongList } from 'network/home'
+import { getRecommendMv } from 'network/mvList'
 import Rdiv from 'common/recommendSongList/recommendSongList-div'
 import scroll from 'common/scroll/scroll'
 import homeSwiper from './childCpn/homeSwiper'
 import homeNavBar from './childCpn/homeNavBar'
 import Wtitle from './childCpn/Wtitle'
 import daily from './childCpn/daily'
+import recommendMv from './childCpn/recommendMv'
 
 export default {
   name: "",
@@ -28,7 +31,8 @@ export default {
     homeSwiper,
     homeNavBar,
     daily,
-    Wtitle
+    Wtitle,
+    recommendMv
   },
   props: {},
   data () {
