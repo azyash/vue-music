@@ -7,7 +7,7 @@
       <Wtitle :title="'推荐歌单'"></Wtitle>
       <Rdiv :recommendSongLists="recommendSongLists" class="Rdiv"></Rdiv>
       <Wtitle :title="'推荐MV'"></Wtitle>
-      <recommendMv></recommendMv>
+      <recommendMv :recommendMv="recommendMv"></recommendMv>
     </scroll>
   </div>
 </template>
@@ -56,8 +56,7 @@ export default {
         this.recommendSongLists = res.data.result
       })
       getRecommendMv().then(res => {
-        this.recommendMv = res.data
-        console.log(this.recommendMv.result)
+        this.recommendMv = res.data.result
       })
     }
   },

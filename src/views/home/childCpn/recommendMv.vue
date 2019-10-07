@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <mvItem></mvItem>
+  <div v-if="recommendMv">
+    <div v-for="(item,index) in recommendMv" :key="index">
+      <mvItem :mvItem="item"></mvItem>
+    </div>
   </div>
 </template>
 
@@ -12,7 +14,9 @@ export default {
   components: {
     mvItem
   },
-  props: {},
+  props: {
+    recommendMv: Array
+  },
   data () {
     return {
     }
@@ -20,8 +24,12 @@ export default {
   watch: {},
   computed: {},
   methods: {},
-  created () { },
-  mounted () { }
+  created () {
+
+  },
+  mounted () {
+
+  }
 }
 </script>
 
