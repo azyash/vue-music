@@ -1,16 +1,33 @@
 <template>
   <div>
-
+    <mvideoNavBar></mvideoNavBar>
+    <scroll class="scroll">
+      <div v-if="newMvs">
+        <div v-for="(item,index) in newMvs" :key="index">
+          <mvItem :mvItem="item"></mvItem>
+        </div>
+      </div>
+    </scroll>
   </div>
 </template>
 
 <script>
+import { getNewMv } from 'network/mvList'
+import scroll from 'common/scroll/scroll'
+import mvItem from 'common/mvItem/mvItem'
+import mvideoNavBar from './childCpn/mvideoNavBar'
+
 export default {
   name: "",
-  components: {},
+  components: {
+    scroll,
+    mvideoNavBar,
+    mvItem
+  },
   props: {},
   data () {
     return {
+      newMvs: []
     }
   },
   watch: {},
@@ -19,15 +36,24 @@ export default {
       return this.$store.state.music
     }
   },
-  methods: {
-    asdf () {
-      this.$store.commit('reviseMusic', 'http://m8.music.126.net/20191001163905/1080fe6c2abf5f71930fca2e1682f55a/ymusic/0fd6/4f65/43ed/a8772889f38dfcb91c04da915b301617.mp3')
-    }
+  methods: {},
+  created () {
+    getNewMv().then(res => {
+      this.newMvs = res.data.data
+    })
   },
-  created () { },
   mounted () { }
 }
 </script>
 
 <style scoped>
+.scroll {
+  padding: 0 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+}
 </style>

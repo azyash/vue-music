@@ -1,6 +1,6 @@
 <template>
   <div v-if="mvDetail" class="mvItem">
-    <video :src="mvUrl" controls="controls"></video>
+    <video :src="mvUrl" controls="controls" :poster="mvDetail.cover"></video>
     <div class="title">
       <span>{{mvDetail.name}}</span>
     </div>
@@ -10,11 +10,11 @@
       <div class="icon">
         <span>
           <img src="~assets/image/common/cm2_act_icn_praise@2x.png" alt="">
-          <i>{{mvDetail.likeCount}}</i>
+          <i>{{likeCount}}</i>
         </span>
         <span>
           <img src="~assets/image/common/cm2_act_icn_cmt@2x.png" alt="">
-          <i>{{mvDetail.commentCount}}</i>
+          <i>{{commentCount}}</i>
         </span>
         <span><img src="~assets/image/common/ddd.png" alt=""></span>
       </div>
@@ -38,7 +38,24 @@ export default {
     }
   },
   watch: {},
-  computed: {},
+  computed: {
+    likeCount () {
+      if (this.mvDetail.likeCount > 10000) {
+        return '1w+'
+      }
+      else {
+        return this.mvDetail.likeCount
+      }
+    },
+    commentCount () {
+      if (this.mvDetail.commentCount > 10000) {
+        return '1w+'
+      }
+      else {
+        return this.mvDetail.commentCount
+      }
+    }
+  },
   methods: {
     getMultidata () {
       this.$nextTick(() => {
@@ -47,14 +64,12 @@ export default {
         })
         getMvDetail(this.mvItem.id).then(res => {
           this.mvDetail = res.data.data
-          console.log(this.mvDetail)
         })
       })
     }
   },
   created () {
     this.getMultidata()
-    console.log(this.mvItem)
   },
   mounted () {
   }
@@ -63,7 +78,7 @@ export default {
 
 <style scoped>
 .mvItem {
-  padding: 10px 0;
+  padding-bottom: 10px;
 }
 video {
   width: 100%;
@@ -99,16 +114,19 @@ video {
   position: relative;
 }
 .icon span:nth-child(1) i {
+  width: 30px;
+  text-align: left;
   font-size: 10px;
   position: absolute;
   top: -6px;
-  right: -6px;
+  right: -28px;
 }
 .icon span:nth-child(2) i {
+  width: 30px;
   font-size: 10px;
   position: absolute;
   top: -6px;
-  right: 0px;
+  right: -25px;
   background: white;
 }
 </style>
