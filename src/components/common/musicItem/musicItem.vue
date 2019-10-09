@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { getMusicUrl } from 'network/songList';
+import { getMusicUrl, getMusicDetail } from 'network/songList';
 
 export default {
   name: "",
@@ -25,19 +25,25 @@ export default {
   },
   data () {
     return {
-      musicId: 0
+      musicUrl: 0,
+      musicDetail: []
     }
   },
   watch: {},
   computed: {},
   methods: {
     reviseMusic () {
-      this.$store.commit('reviseMusic', this.musicId)
+      this.$store.commit('reviseMusic', this.musicUrl)
+      this.$store.commit('reviseMusicDetail', this.musicDetail)
     }
   },
   created () {
     getMusicUrl(this.musicItem.id).then(res => {
-      this.musicId = res.data.data[0].url
+      this.musicUrl = res.data.data[0].url
+    })
+    getMusicDetail(this.musicItem.id).then(res => {
+      this.musicDetail = res.data
+      // console.log(this.musicDetail)
     })
   },
   mounted () { }

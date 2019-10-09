@@ -1,10 +1,7 @@
 <template>
   <navBar class="navBar">
-    <div slot="left" class="el-icon-arrow-left" @click="backHome"></div>
-    <div slot="center" class="center">歌单</div>
-    <div slot="right">
-      <img src="~assets/image/common/musicicon-white.svg" alt="">
-    </div>
+    <div slot="left" class="el-icon-arrow-left" @click="back"></div>
+    <div slot="center" class="center">music</div>
   </navBar>
 </template>
 
@@ -22,7 +19,7 @@ export default {
   watch: {},
   computed: {},
   methods: {
-    backHome () {
+    back () {
       this.$router.go(-1)
     }
   },
@@ -40,5 +37,8 @@ div {
 }
 img {
   width: 18px;
+}
+.navBar {
+  background: black;
 }
 </style>

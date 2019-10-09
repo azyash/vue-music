@@ -17,3 +17,12 @@ export function getMusicUrl (id) {
     }
   })
 }
+
+export function getMusicDetail (ids) {
+  return request({
+    url: '/song/detail',
+    params: {
+      ids
+    }
+  })
+}

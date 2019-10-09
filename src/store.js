@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    music: ''
+    music: '',
+    musicDetail: []
   },
   mutations: {
     reviseMusic (state, revise) {
       return state.music = revise
+    },
+    reviseMusicDetail (state, revise) {
+      return state.musicDetail = revise
     }
   },
   actions: {

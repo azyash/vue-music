@@ -7,6 +7,7 @@ const Mvideo = () => import('./views/mvideo/mvideo')
 const Profile = () => import('./views/profile/profile')
 const Use = () => import('./views/use/use')
 const SongList = () => import('./views/songList/songList')
+const Playing = () => import('./views/playing/playing')
 
 Vue.use(vueRouter)
 
@@ -38,6 +39,10 @@ const routes = [
   {
     path: '/songlist',
     component: SongList
+  },
+  {
+    path: '/playing',
+    component: Playing
   }
 ]
 

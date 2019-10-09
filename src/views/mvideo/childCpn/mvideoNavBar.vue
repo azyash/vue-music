@@ -3,6 +3,9 @@
     <div slot="center">
       最新MV
     </div>
+    <div slot="right">
+      <img src="~assets/image/common/musicicon.png" alt="">
+    </div>
   </navBar>
 </template>
 
@@ -31,5 +34,8 @@ export default {
 }
 div {
   font-size: 20px;
+}
+img {
+  width: 18px;
 }
 </style>

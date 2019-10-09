@@ -6,7 +6,7 @@
     <div class="nav-center">
       <slot name="center"></slot>
     </div>
-    <div class="nav-right">
+    <div class="nav-right" @click="goToPlaying">
       <slot name="right"></slot>
     </div>
   </div>
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-  name: "NavBar"
+  name: "NavBar",
+  methods: {
+    goToPlaying () {
+      this.$router.push('playing')
+    }
+  },
 }
 </script>
 
