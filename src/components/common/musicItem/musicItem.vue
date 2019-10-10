@@ -34,7 +34,7 @@ export default {
   methods: {
     reviseMusic () {
       this.$store.commit('reviseMusic', this.musicUrl)
-      this.$store.commit('reviseMusicDetail', this.musicDetail)
+      this.$store.commit('reviseMusicDetail', this.musicDetail.songs)
     }
   },
   created () {
@@ -43,7 +43,6 @@ export default {
     })
     getMusicDetail(this.musicItem.id).then(res => {
       this.musicDetail = res.data
-      // console.log(this.musicDetail)
     })
   },
   mounted () { }
