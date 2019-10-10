@@ -1,7 +1,7 @@
 <template>
   <navBar class="navBar">
     <div slot="left" class="el-icon-arrow-left" @click="back"></div>
-    <div slot="center" class="center" v-if="this.$store.state.musicDetail.length">
+    <div class="title" slot="center" v-if="this.$store.state.musicDetail.length">
       {{this.$store.state.musicDetail[0].name}}
     </div>
   </navBar>
@@ -31,14 +31,21 @@ export default {
 </script>
 
 <style scoped>
-div {
+.title {
   width: 100%;
   font-size: 18px;
   font-weight: 600;
   color: white;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+.navBar div:nth-child(1) {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
 }
 img {
   width: 18px;

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.$store.state.musicDetail.length" class="imgRotate">
+  <div v-if="this.$store.state.musicDetail.length" :class="{ 'imgRotate': this.$store.state.musicPlay }">
     <img :src="this.$store.state.musicDetail[0].al.picUrl" alt="">
   </div>
 </template>

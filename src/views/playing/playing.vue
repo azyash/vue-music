@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import { getMusicDetail } from 'network/songList'
 import bgImg from './childCpn/bgImg'
 import playingNavBar from './childCpn/playingNavBar'
 import playingMain from './childCpn/playingMain'
@@ -31,19 +30,10 @@ export default {
   computed: {},
   methods: {},
   created () {
-    this.$nextTick(function () {
-      getMusicDetail('347230').then(res => {
-        this.$store.commit('reviseMusicDetail', res.data.songs)
-        console.log(this.$store.state.musicDetail)
-      })
-    })
-  },
-  mounted () {
 
   },
-  updated: function (el, binding) {
-    // console.log(this.$store.state.musicDetail.songs[0].al)
-  }
+  mounted () {
+  },
 }
 </script>
 

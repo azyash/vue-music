@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     music: '',
-    musicDetail: []
+    musicDetail: [],
+    musicPlay: false
   },
   mutations: {
     reviseMusic (state, revise) {
@@ -14,6 +15,12 @@ export default new Vuex.Store({
     },
     reviseMusicDetail (state, revise) {
       return state.musicDetail = revise
+    },
+    musicPlay (state) {
+      return state.musicPlay = true
+    },
+    musicPause (state) {
+      return state.musicPlay = false
     }
   },
   actions: {

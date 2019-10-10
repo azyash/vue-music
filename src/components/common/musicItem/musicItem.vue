@@ -33,6 +33,7 @@ export default {
   computed: {},
   methods: {
     reviseMusic () {
+      this.$store.commit('musicPlay')
       this.$store.commit('reviseMusic', this.musicUrl)
       this.$store.commit('reviseMusicDetail', this.musicDetail.songs)
     }
