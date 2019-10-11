@@ -14,12 +14,7 @@ export default {
   },
   methods: {
     topClick: function () {
-      console.log(document.documentElement.scrollTop)
-      if (window.scrolltop > 0) {
-        setTimeout(() => {
-          window.scrollTo(0, 0)
-        }, 15);
-      }
+      window.scrollTo(0, 0);
     }
   }
 }
