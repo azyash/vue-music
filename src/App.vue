@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <audio autoplay="autoplay" :src="music" ref="mAudio" />
+    <audio autoplay="autoplay" :src="music" ref="mAudio" loop />
     <keep-alive exclude="songList">
       <router-view />
     </keep-alive>

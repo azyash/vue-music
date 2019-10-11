@@ -1,6 +1,7 @@
 <template>
-  <div v-if="this.$store.state.musicDetail.length" :class="{ 'imgRotate': this.$store.state.musicPlay }">
-    <img :src="this.$store.state.musicDetail[0].al.picUrl" alt="">
+  <div v-if="this.$store.state.musicDetail.length">
+    <!-- :class="{ 'imgRotate': this.$store.state.musicPlay }" -->
+    <img ref="rotateImg" :src="this.$store.state.musicDetail[0].al.picUrl" alt="">
   </div>
 </template>
 
@@ -11,12 +12,31 @@ export default {
   props: {},
   data () {
     return {
+      rotateDeg: 0,
+      rotateImgRotate: null
     }
   },
-  watch: {},
+  watch: {
+    '$store.state.musicPlay': function () {
+      if (this.$store.state.musicPlay) {
+        this.rotateImg()
+      }
+      else {
+        clearTimeout(this.rotateImgRotate)
+      }
+    }
+  },
   computed: {},
-  methods: {},
-  created () { },
+  methods: {
+    rotateImg () {
+      this.rotateImgRotate = setInterval(() => {
+        this.$refs.rotateImg.style.transform = 'rotate(' + (this.rotateDeg += 0.15) + 'deg)'
+        this.$refs.rotateImg.style.transition = 'all 15 linear'
+      }, 15)
+    }
+  },
+  created () {
+  },
   mounted () { }
 }
 </script>
@@ -31,7 +51,7 @@ div {
   margin: 0 auto;
   border-radius: 50%;
 }
-.imgRotate {
+/* .imgRotate {
   animation: rotate 20s linear infinite;
 }
 
@@ -42,5 +62,5 @@ div {
   to {
     transform: rotate(359deg);
   }
-}
+} */
 </style>

@@ -1,29 +1,18 @@
 # vue-music
 
-## Project setup
+## 项目介绍
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+接口来源github，技术栈 vue-cli axios vue-router vuex better-scroll element-ui
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+### 完成度
 ```
 
-### Run your tests
-```
-npm run test
 ```
 
-### Lints and fixes files
+### 运行方式
 ```
-npm run lint
+NeteaseCloudMusicApi-master文件 "node app.js" 启动服务端
+根目录 "npm run serve"
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
