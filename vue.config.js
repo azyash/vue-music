@@ -14,4 +14,4 @@ module.exports = {
       .set('common', resolve('src/components/common'))
       .set('views', resolve('src/views'))
   },
-};
+}

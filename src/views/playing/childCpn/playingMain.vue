@@ -36,6 +36,12 @@ export default {
     }
   },
   created () {
+    if (this.$store.state.musicPlay) {
+      this.rotateImg()
+    }
+    else {
+      clearTimeout(this.rotateImgRotate)
+    }
   },
   mounted () { }
 }
