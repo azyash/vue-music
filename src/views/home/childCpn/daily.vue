@@ -9,7 +9,7 @@
       <h3>{{date}}</h3>
       <p>每日歌曲推荐</p>
     </div>
-    <div class="right">
+    <div class="right" @click="goToRankinglist">
       <img src="~assets/image/home/cm2_discover_icn_upbill-ip6@2x.png" alt="">
       <p>云音乐热歌榜</p>
     </div>
@@ -28,7 +28,11 @@ export default {
   },
   watch: {},
   computed: {},
-  methods: {},
+  methods: {
+    goToRankinglist () {
+      this.$router.replace('rankinglist')
+    }
+  },
   created () {
     var myDate = new Date()
     this.date = myDate.getDate()

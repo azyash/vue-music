@@ -8,6 +8,7 @@ const Profile = () => import('./views/profile/profile')
 const Use = () => import('./views/use/use')
 const SongList = () => import('./views/songList/songList')
 const Playing = () => import('./views/playing/playing')
+const rankingList = () => import('./views/rankingList/rankingList')
 
 Vue.use(vueRouter)
 
@@ -43,6 +44,10 @@ const routes = [
   {
     path: '/playing',
     component: Playing
+  },
+  {
+    path: '/rankinglist',
+    component: rankingList
   }
 ]
 
