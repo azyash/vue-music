@@ -1,6 +1,6 @@
 <template>
   <navBar class="navBar">
-    <img src="" alt="">
+    <div slot="left" class="el-icon-arrow-left" @click="backHome"></div>
     <div slot="center">
       <form @submit.prevent="onSubmit(message)">
         <input type="text" placeholder="单曲/歌单/电台" v-model="message">
@@ -27,6 +27,9 @@ export default {
   watch: {},
   computed: {},
   methods: {
+    backHome () {
+      this.$router.push('/home')
+    },
     onSubmit (message) {
       this.$router.push({
         path: '/searchmusic',
@@ -65,5 +68,8 @@ input::-webkit-input-placeholder {
 }
 img {
   width: 18px;
+}
+.el-icon-arrow-left {
+  font-size: 18px;
 }
 </style>

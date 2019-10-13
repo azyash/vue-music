@@ -5,7 +5,8 @@
     </div>
     <div class="center">
       <div>{{musicItem.name}}</div>
-      <div>{{musicItem.ar[0].name}}-{{musicItem.al.name}}</div>
+      <!-- <div>{{musicItem.artists[0].name || musicItem.ar[0].name || ''}}-{{musicItem.album.name || musicItem.al.name || ''}}</div> -->
+      <div>{{artists}}-{{album}}</div>
     </div>
     <div class="right">
       <img src="~assets/image/common/ddd.png" alt="">
@@ -30,7 +31,24 @@ export default {
     }
   },
   watch: {},
-  computed: {},
+  computed: {
+    artists () {
+      if (typeof (this.musicItem.artists) == "undefined") {
+        return this.musicItem.ar[0].name
+      }
+      else {
+        return this.musicItem.artists[0].name
+      }
+    },
+    album () {
+      if (typeof (this.musicItem.album) == "undefined") {
+        return this.musicItem.al.name
+      }
+      else {
+        return this.musicItem.album.name
+      }
+    }
+  },
   methods: {
     reviseMusic () {
       this.$store.commit('musicPlay')

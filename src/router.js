@@ -9,6 +9,7 @@ const Use = () => import('./views/use/use')
 const SongList = () => import('./views/songList/songList')
 const Playing = () => import('./views/playing/playing')
 const rankingList = () => import('./views/rankingList/rankingList')
+const searchMusic = () => import('./views/searchMusic/searchMusic')
 
 Vue.use(vueRouter)
 
@@ -48,7 +49,11 @@ const routes = [
   {
     path: '/rankinglist',
     component: rankingList
-  }
+  },
+  {
+    path: '/searchmusic',
+    component: searchMusic
+  },
 ]
 
 export default new vueRouter({

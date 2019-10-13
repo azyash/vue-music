@@ -24,4 +24,13 @@ export function getTopList (idx) {
   })
 }
 
+export function getSearch (keywords) {
+  return request({
+    url: '/search',
+    params: {
+      keywords
+    }
+  })
+}
+
 
