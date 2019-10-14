@@ -21,7 +21,7 @@ export default {
   props: {},
   data () {
     return {
-      message: ''
+      message: this.$route.query.message
     }
   },
   watch: {

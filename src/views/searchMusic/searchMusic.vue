@@ -1,7 +1,7 @@
 <template>
   <div class="searchMusic">
     <searchMusicNavBar></searchMusicNavBar>
-    <scroll class="scroll">
+    <scroll class="scroll" v-if="this.musicItems">
       <div v-for="(item,index) in musicItems" :key="index">
         <musicItem :musicItem='item' :index='index'></musicItem>
       </div>
@@ -29,9 +29,6 @@ export default {
     }
   },
   watch: {
-    '$route.query.message': function () {
-      this.getMultidata()
-    }
   },
   computed: {},
   methods: {
@@ -42,9 +39,14 @@ export default {
     }
   },
   created () {
-    this.getMultidata()
   },
   mounted () { },
+  activated () {
+    this.getMultidata()
+  },
+  deactivated () {
+    this.musicItems = ''
+  },
 }
 </script>
 
