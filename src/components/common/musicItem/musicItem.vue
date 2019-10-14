@@ -5,7 +5,6 @@
     </div>
     <div class="center">
       <div>{{musicItem.name}}</div>
-      <!-- <div>{{musicItem.artists[0].name || musicItem.ar[0].name || ''}}-{{musicItem.album.name || musicItem.al.name || ''}}</div> -->
       <div>{{artists}}-{{album}}</div>
     </div>
     <div class="right">
