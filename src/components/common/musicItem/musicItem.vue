@@ -54,19 +54,22 @@ export default {
       this.$store.commit('musicPlay')
       this.$store.commit('reviseMusic', this.musicUrl)
       this.$store.commit('reviseMusicDetail', this.musicDetail.songs)
+    },
+    getMultidata () {
+      getMusicUrl(this.musicItem.id).then(res => {
+        this.musicUrl = res.data.data[0].url
+      })
+      getMusicDetail(this.musicItem.id).then(res => {
+        this.musicDetail = res.data
+      })
     }
   },
   created () {
-
+    this.getMultidata()
   },
   mounted () { },
   updated () { //页面数据已更新
-    getMusicUrl(this.musicItem.id).then(res => {
-      this.musicUrl = res.data.data[0].url
-    })
-    getMusicDetail(this.musicItem.id).then(res => {
-      this.musicDetail = res.data
-    })
+    this.getMultidata()
   },
 }
 </script>

@@ -24,7 +24,11 @@ export default {
       message: ''
     }
   },
-  watch: {},
+  watch: {
+    '$route.query.message': function () {
+      this.message = this.$route.query.message
+    }
+  },
   computed: {},
   methods: {
     backHome () {
