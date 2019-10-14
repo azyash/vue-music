@@ -29,7 +29,8 @@ export default {
       musicDetail: []
     }
   },
-  watch: {},
+  watch: {
+  },
   computed: {
     artists () {
       if (typeof (this.musicItem.artists) == "undefined") {
@@ -56,6 +57,10 @@ export default {
     }
   },
   created () {
+
+  },
+  mounted () { },
+  updated () { //页面数据已更新
     getMusicUrl(this.musicItem.id).then(res => {
       this.musicUrl = res.data.data[0].url
     })
@@ -63,7 +68,6 @@ export default {
       this.musicDetail = res.data
     })
   },
-  mounted () { }
 }
 </script>
 
@@ -89,10 +93,14 @@ export default {
 .center > div:nth-child(1) {
   color: black;
   font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .center > div:nth-child(2) {
   color: rgb(163, 163, 163);
   font-size: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 img {
   height: 20px;
