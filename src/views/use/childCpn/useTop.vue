@@ -22,7 +22,6 @@ export default {
   methods: {
     showLogin () {
       this.$emit('activeLogin')
-      console.log('asdf')
     }
   },
   created () { },

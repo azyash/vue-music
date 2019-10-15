@@ -39,7 +39,6 @@ export default {
   methods: {
     activeLogin () {
       this.showLogin = !this.showLogin
-      console.log('qqq')
     }
   },
   created () { },
