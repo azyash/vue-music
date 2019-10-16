@@ -2,7 +2,7 @@
   <div class="login">
     <div class="el-icon-close" @click="activeLogin"></div>
     <img src="~assets/image/use/13.png" alt="">
-    <div class="button">手机号登录</div>
+    <div class="button" @click="activePhoneLogin">手机号登录</div>
   </div>
 </template>
 
@@ -20,6 +20,9 @@ export default {
   methods: {
     activeLogin () {
       this.$emit('activeLogin')
+    },
+    activePhoneLogin () {
+      this.$emit('activePhoneLogin')
     }
   },
   created () { },

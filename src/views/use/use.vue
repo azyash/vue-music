@@ -1,6 +1,7 @@
 <template>
   <div>
-    <login class="login" v-if="showLogin" @activeLogin="activeLogin"></login>
+    <login class="login" v-if="showLogin" @activeLogin="activeLogin" @activePhoneLogin="activePhoneLogin"></login>
+    <phoneLogin class="phoneLogin" v-if="showPhoneLogin" @activeLogin="activeLogin" @activePhoneLogin="activePhoneLogin"></phoneLogin>
     <useNavBar></useNavBar>
     <scroll class="scroll">
       <useTop @activeLogin="activeLogin"></useTop>
@@ -11,8 +12,11 @@
 </template>
 
 <script>
+import { getLogin } from 'network/use.js'
+
 import scroll from 'common/scroll/scroll'
 import login from './childCpn/login'
+import phoneLogin from './childCpn/phoneLogin'
 import useNavBar from './childCpn/useNavBar'
 import useBanner from './childCpn/useBanner'
 import useTop from './childCpn/useTop'
@@ -23,6 +27,7 @@ export default {
   components: {
     scroll,
     login,
+    phoneLogin,
     useNavBar,
     useBanner,
     useTop,
@@ -31,7 +36,8 @@ export default {
   props: {},
   data () {
     return {
-      showLogin: false
+      showLogin: false,
+      showPhoneLogin: true
     }
   },
   watch: {},
@@ -39,6 +45,9 @@ export default {
   methods: {
     activeLogin () {
       this.showLogin = !this.showLogin
+    },
+    activePhoneLogin () {
+      this.showPhoneLogin = !this.showPhoneLogin
     }
   },
   created () { },
@@ -58,6 +67,10 @@ export default {
 }
 .login {
   position: absolute;
-  z-index: 99;
+  z-index: 3;
+}
+.phoneLogin {
+  position: absolute;
+  z-index: 4;
 }
 </style>

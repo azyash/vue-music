@@ -29,6 +29,9 @@ export default {
       else {
         this.$refs.mAudio.pause()
       }
+    },
+    '$store.state.userStatus': function () {
+      console.log(this.$store.state.userStatus)
     }
   },
   created () {

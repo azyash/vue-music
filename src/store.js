@@ -7,7 +7,11 @@ export default new Vuex.Store({
   state: {
     music: '',
     musicDetail: [],
-    musicPlay: false
+    musicPlay: false,
+
+    userStatus: [],
+    userDetail: [],
+    userSubcount: [],
   },
   mutations: {
     reviseMusic (state, revise) {
