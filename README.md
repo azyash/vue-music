@@ -6,10 +6,11 @@
 为移动端项目
 ```
 ### 预览图
-```
-![](/preview/1.jpg)
-![](http://baidu.com/pic/doge.png)
-```
+![](/preview/1.JPG)
+![](/preview/2.JPG)
+![](/preview/3.PNG)
+![](/preview/4.JPG)
+![](/preview/5.PNG)
 
 ### 完成度
 ```
