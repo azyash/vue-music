@@ -11,6 +11,7 @@
 ![](/preview/3.PNG)
 ![](/preview/4.JPG)
 ![](/preview/5.PNG)
+![](/preview/6.PNG)
 
 ### 完成度
 ```
