@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="Object.keys(this.userDetail).length == 0" class="vIf">
+    <div v-if="this.$store.state.userStatus.length == 0" class="vIf">
       <p>登录网易云音乐</p>
       <p>手机电脑多端同步，尽享海量高品质音乐</p>
       <div class="login" @click="showLogin">
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div v-else class="vElse">
-      <div>
+      <div v-if="this.userDetail.profile">
         <img :src="this.userDetail.profile.avatarUrl" alt="">
         <p>{{this.userDetail.profile.nickname}}</p>
       </div>
@@ -22,7 +22,7 @@
             <span>{{this.userDetail.listenSongs}}</span>
             <span>听歌量</span>
           </li>
-          <li v-if="this.userDetail.profile">
+          <li>
             <span>{{this.userDetail.profile.newFollows}}</span>
             <span>关注</span>
           </li>

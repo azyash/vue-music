@@ -94,8 +94,6 @@ export default {
     logoff () {
       getLogout()
       this.$store.state.userStatus = []
-      this.$store.state.userDetail = []
-      this.$store.state.userSubcount = []
       this.$store.state.userId = ''
     }
   },
