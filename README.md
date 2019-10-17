@@ -8,6 +8,7 @@
 ### 预览图
 ```
 ![](/preview/1.jpg)
+![](http://baidu.com/pic/doge.png)
 ```
 
 ### 完成度
