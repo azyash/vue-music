@@ -1,10 +1,10 @@
 <template>
   <div>
     <login class="login" v-if="showLogin" @activeLogin="activeLogin" @activePhoneLogin="activePhoneLogin"></login>
-    <phoneLogin class="phoneLogin" v-if="showPhoneLogin" @activeLogin="activeLogin" @activePhoneLogin="activePhoneLogin"></phoneLogin>
+    <phoneLogin class="phoneLogin" v-if="showPhoneLogin" @activeLogin="activeLogin" @activePhoneLogin="activePhoneLogin" @userDetail="layUserDetail"></phoneLogin>
     <useNavBar></useNavBar>
     <scroll class="scroll">
-      <useTop @activeLogin="activeLogin"></useTop>
+      <useTop @activeLogin="activeLogin" :userDetail="userDetail"></useTop>
       <useBanner></useBanner>
       <useList></useList>
     </scroll>
@@ -31,18 +31,22 @@ export default {
     useNavBar,
     useBanner,
     useTop,
-    useList
+    useList,
   },
   props: {},
   data () {
     return {
       showLogin: false,
-      showPhoneLogin: false
+      showPhoneLogin: false,
+      userDetail: {}
     }
   },
   watch: {},
   computed: {},
   methods: {
+    layUserDetail (userDetail) {
+      this.userDetail = userDetail
+    },
     activeLogin () {
       this.showLogin = !this.showLogin
     },
@@ -50,7 +54,8 @@ export default {
       this.showPhoneLogin = !this.showPhoneLogin
     }
   },
-  created () { },
+  created () {
+  },
   mounted () { }
 }
 </script>

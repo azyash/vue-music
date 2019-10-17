@@ -10,8 +10,7 @@ export default new Vuex.Store({
     musicPlay: false,
 
     userStatus: [],
-    userDetail: [],
-    userSubcount: [],
+    userId: '',
   },
   mutations: {
     reviseMusic (state, revise) {

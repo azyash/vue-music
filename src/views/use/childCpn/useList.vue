@@ -67,11 +67,16 @@
       <div slot="center">免流量</div>
       <div slot="right" class="el-icon-arrow-right"></div>
     </useItem>
+
+    <div class="border"></div>
+
+    <div class="logoff" @click="logoff" v-if="this.$store.state.userStatus.length !== 0">退出登录</div>
   </div>
 </template>
 
 <script>
 import useItem from 'common/trItem/trItem'
+import { getLogout } from 'network/use'
 
 export default {
   name: "",
@@ -85,7 +90,15 @@ export default {
   },
   watch: {},
   computed: {},
-  methods: {},
+  methods: {
+    logoff () {
+      getLogout()
+      this.$store.state.userStatus = []
+      this.$store.state.userDetail = []
+      this.$store.state.userSubcount = []
+      this.$store.state.userId = ''
+    }
+  },
   created () { },
   mounted () { }
 }
@@ -98,5 +111,14 @@ img {
 .border {
   height: 10px;
   width: 100%;
+}
+.logoff {
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  color: red;
+  font-size: 15px;
+  height: 40px;
+  line-height: 40px;
 }
 </style>

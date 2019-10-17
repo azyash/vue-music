@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="this.$store.state.userStatus.length == 0" class="vIf">
+    <div v-if="Object.keys(this.userDetail).length == 0" class="vIf">
       <p>登录网易云音乐</p>
       <p>手机电脑多端同步，尽享海量高品质音乐</p>
       <div class="login" @click="showLogin">
@@ -9,25 +9,25 @@
     </div>
     <div v-else class="vElse">
       <div>
-        <img :src="this.$store.state.userStatus.profile.avatarUrl" alt="">
-        <p>{{this.$store.state.userStatus.profile.nickname}}</p>
+        <img :src="this.userDetail.profile.avatarUrl" alt="">
+        <p>{{this.userDetail.profile.nickname}}</p>
       </div>
       <div>
-        <ul>
+        <ul v-if="this.userDetail.profile">
           <li>
-            <span>{{this.$store.state.userDetail.level}}</span>
+            <span>{{this.userDetail.level}}</span>
             <span>Lv</span>
           </li>
           <li>
-            <span>{{this.$store.state.userDetail.listenSongs}}</span>
+            <span>{{this.userDetail.listenSongs}}</span>
             <span>听歌量</span>
           </li>
-          <li>
-            <span>{{this.$store.state.userDetail.profile.newFollows}}</span>
+          <li v-if="this.userDetail.profile">
+            <span>{{this.userDetail.profile.newFollows}}</span>
             <span>关注</span>
           </li>
           <li>
-            <span>{{this.$store.state.userDetail.profile.followeds}}</span>
+            <span>{{this.userDetail.profile.followeds}}</span>
             <span>粉丝</span>
           </li>
         </ul>
@@ -40,7 +40,12 @@
 export default {
   name: "",
   components: {},
-  props: {},
+  props: {
+    userDetail: {
+      type: Object,
+      value: {}
+    }
+  },
   data () {
     return {
     }
@@ -52,8 +57,11 @@ export default {
       this.$emit('activeLogin')
     }
   },
-  created () { },
-  mounted () { }
+  created () {
+  },
+  mounted () { },
+  updated () {
+  }
 }
 </script>
 

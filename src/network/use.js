@@ -40,6 +40,15 @@ export function getUseSubcount (uid) {
   return request({
     url: '/user/subcount',
     params: {
+      uid
+    }
+  })
+}
+
+export function getLogout () {
+  return request({
+    url: '/logout',
+    params: {
     }
   })
 }

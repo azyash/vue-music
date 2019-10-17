@@ -2,7 +2,7 @@
   <div class="father">
     <phoneLoginNavBar @activePhoneLogin="activePhoneLogin"></phoneLoginNavBar>
     <input type="text" placeholder="请输入手机号" pattern="\d*" v-model.lazy="phone">
-    <input type="text" placeholder="请输入密码" v-model.lazy="password">
+    <input type="password" placeholder="请输入密码" v-model.lazy="password">
     <div class="login" @click="login">立即登录</div>
   </div>
 </template>
@@ -20,27 +20,25 @@ export default {
   data () {
     return {
       phone: '',
-      password: ''
+      password: '',
+      userDetail: {}
     }
   },
-  watch: {},
+  watch: {
+  },
   computed: {},
   methods: {
-    login () {
-      getLogin(this.phone, this.password).then(res => {
+    async login () {
+      await getLogin(this.phone, this.password)
+      await getLoginStatus().then(res => {
+        this.$store.state.userStatus = res.data
+        this.$store.state.userId = res.data.profile.userId
+      })
+      getUseDetail(this.$store.state.userId).then(res => {
+        this.userDetail = res.data
+        this.$emit('userDetail', this.userDetail)
         this.$emit('activePhoneLogin')
         this.$emit('activeLogin')
-        getLoginStatus().then(res => {
-          this.$store.state.userStatus = res.data
-          getUseDetail(this.$store.state.userStatus.profile.userId).then(res => {
-            this.$store.state.userDetail = res.data
-            console.log(this.$store.state.userDetail)
-          })
-          getUseSubcount().then(res => {
-            this.$store.state.userSubcount = res.data
-            console.log(this.$store.state.userSubcount)
-          })
-        })
       })
     },
     activePhoneLogin () {
@@ -49,11 +47,9 @@ export default {
   },
   created () {
     // getLoginRefresh()
-    console.log(this.$store.state.userStatus)
   },
   mounted () { },
-  updated () {
-  }
+  updated () { }
 }
 </script>
 

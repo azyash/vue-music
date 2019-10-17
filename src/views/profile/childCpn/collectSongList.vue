@@ -1,20 +1,14 @@
 <template>
   <div>
-    <profileNavBar></profileNavBar>
-    <profileList></profileList>
+    <div></div>
+    <div></div>
   </div>
 </template>
 
 <script>
-import profileList from './childCpn/profileList'
-import profileNavBar from './childCpn/profileNavBar'
-
 export default {
   name: "",
-  components: {
-    profileNavBar,
-    profileList
-  },
+  components: {},
   props: {},
   data () {
     return {
